@@ -59,6 +59,19 @@ article h3{
 .books {
     display: grid;
     grid-template-columns: auto auto auto;
+    max-width: 100%;
+    height: auto;
+    gap: 16px;
+}
+
+.books img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.books figure {
+    margin: 0;
 }
 
 footer {
