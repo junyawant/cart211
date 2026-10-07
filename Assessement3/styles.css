@@ -188,4 +188,45 @@ Up to 900px */
         }
     }
 
+    nav a:active {
+        color: darkgray;
+    }
+
+    /* Main Content */
+
+    #wrapper {
+        width: 92%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    /* Headings */
+    header h1 {
+        text-align: right;
+        font-size: 23px;
+        margin-top: 40px;
+    }
+
+    header h2 {
+        text-align: right;
+        font-size: 18px;
+    }
+
+    header h3 {
+        font-size: 18px;
+    }
+
+    /* Books */
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+     /* Footer */
+    footer {
+        margin-top: 40px;
+        font-size: 12;
+
+    }
+
 }
