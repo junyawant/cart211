@@ -130,7 +130,58 @@ footer a {
     color: white;
 }
 
-body {
-    background-color: #000000;
-    color: white;
+/* Tablet
+Up to 900px */
+
+@media (max-width: 900px) {
+    
+    #wrapper {
+        width: 70%;
+        margin-right: 30px;
+    }
+
+    nav {
+        margin-left: 30px;
+        width: 20%;
+    }
+
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*MOVILE up to 600px*/
+
+@media (max-width: 600px) {
+
+    /* Navigation becomes a normal horizontal moboile bar */
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 0 40px 0;
+        padding: 10px 5px;
+
+        position: relative;
+        float: none;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        line-height: 30px;
+        background: black;
+        border-bottom: 4px solid black;
+
+        z-index: 1000;
+
+    }
+
+    nav a {
+        color: white;
+    }
+
+    nava:hover {
+        color: darkgray;
+    }
 }
