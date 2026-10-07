@@ -71,6 +71,9 @@ article h3{
     color: darkgrey;
 }
 
+
+/* VERSION 1
+
 .books {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -78,6 +81,24 @@ article h3{
     height: auto;
     gap: 16px;
 }
+*/
+
+/* VERSION 2
+.books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    gap: 16px;
+}
+*/
+
+.books {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+
 
 .books img{
     display: block;
