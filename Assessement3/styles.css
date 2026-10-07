@@ -21,7 +21,7 @@ nav a:hover {
     color: darkgrey;
 }
 nav a:visited {
-    color: red;
+    color: rgb(108, 108, 109);
 }
 
 #wrapper {
@@ -99,4 +99,9 @@ footer {
     font-weight: lighter;
     text-align: right;
     font-style: italic;
+}
+
+body {
+    background-color: #000000;
+    color: white;
 }
