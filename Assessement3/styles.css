@@ -181,7 +181,11 @@ Up to 900px */
         color: white;
     }
 
-    nava:hover {
-        color: darkgray;
+    /*Deives that actually support hover*/
+    @media (hover:hover) {
+    nav a:hover {
+        color: darkgrey;
+        }
     }
+
 }
