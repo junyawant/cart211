@@ -230,3 +230,23 @@ Up to 900px */
     }
 
 }
+
+/* Very Small Phones - Up to 400px */
+@media (max-width: 400px) {
+
+    nav {
+        padding:8px 0;
+    }
+
+    #wrapper {
+        width: 94%;
+    }
+
+    .books {
+        gap: 12px;
+    }
+
+    article figure figcaption {
+        font-size: 11px;
+    }
+}
