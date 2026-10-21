@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video</title>
+
+    <style>
+
+        /* Removes default spacing and makes the page fill the screen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            color: white;
+            background-color: black;
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            /* (object-fit) Fills the screen without stretching the video */
+            object-fit: cover;
+            object-position: center;
+
+            /* Places the video behind the content */
+            z-index: -1;
+        }
+
+        /* Adds a dark overlay to make the text easier to read */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* Centers our content vertically */
+            justify-content: center;
+            /* Cneter our content horizontally */
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            /* Clamp is a fuction that takes 3 values - clamp (min, pref, max) */
+            /* Rem is a unit based on the real font size of the webpage */
+            font-size: clamp(2rem, 5w, 4res);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <video class="background-video"
+    autoplay
+    muted
+    loop
+    playinline
+    aria-hidden="true"
+    tabindex="-1">
+
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support background view
+    </video>
+
+    <!-- Darkens the BG video so that the text is more readable -->
+     <div class="overlay"></div>
+
+     <main class="content">
+        <h1>Basketball Video</h1>
+        <p>A beautiful game of basketball</p>
+
+     </main>
+
+</body>
+</html>
