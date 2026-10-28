@@ -1,325 +1,324 @@
-body{
-    font-family: 'Roboto', 'Inter', sans-serif;
-    font-weight: 900;
-    font-size: 1em; /* USE THE DEFAULT SIZE AS THE REFERENCE SIZE */
-    padding: 0; /* REMOVE THE INNER SACING AROUND THE PAGE */
-    margin: 0; /* REMOVE THE BROWSER'S DEFAULT OUTER PAGE MARGINS */
-}
-
-/* IMAGE HOVER EFFECTS */
-
-/* POSITION EACH FIGURE SO THE TEXT CAN APPEAR OVER ITS IMAGE */
-
-    .pict figure{
-        position: relative; /* CREATES A POSITIONING REFERENCE FOR THE CHILD ELEMENT */
-        display: inline-block; /* ALLOWS FIGURES TO SIT ALONGSIDE EACH OTHER */
-        cursor: pointer; /* SHOW A HAND CURSOR WHEN HOVERING OVER THE FIGURE */
+    body{
+        font-family: 'Roboto', 'Inter', sans-serif;
+        font-weight: 900;
+        font-size: 1em; /* USE THE DEFAULT SIZE AS THE REFERENCE SIZE */
+        padding: 0; /* REMOVE THE INNER SACING AROUND THE PAGE */
+        margin: 0; /* REMOVE THE BROWSER'S DEFAULT OUTER PAGE MARGINS */
     }
 
-    /* MAKE IMAGES FILL AVAILABLE WIDTH */
-    .pict img{
-        width: 100%;
-        transition: transform 0.3s ease, opacity 0.3s ease; /* ANIMATE ZOOM AND TRANSPARENCY CHANGES OVER 0.3S */
+    /* IMAGE HOVER EFFECTS */
 
-    }
+    /* POSITION EACH FIGURE SO THE TEXT CAN APPEAR OVER ITS IMAGE */
 
-    /* HIDE THE TEXT UNTIL THE IMAGE IS HOVERED OVER */
-    .hover-text{
-        /* HIDES THE TEXT BY DEFAULT */
-        display: none;
-        position: absolute; /* ALLOWS THE TEXT TO SIT ON TOP OF THE IMAGE */
-        bottom: 30px;
-        left: 10px;
-        background-color: rgba(0, 0, 0, 0.7); /* USES A BLACK BG WITH 70% OPACITY */
-        color: white;
-        padding: 8px;
-        border-radius: 4px;
-        white-space: nowrap;/* KEEP THE TEXT ON ONE LINE */
-    }
+        .pict figure{
+            position: relative; /* CREATES A POSITIONING REFERENCE FOR THE CHILD ELEMENT */
+            display: inline-block; /* ALLOWS FIGURES TO SIT ALONGSIDE EACH OTHER */
+            cursor: pointer; /* SHOW A HAND CURSOR WHEN HOVERING OVER THE FIGURE */
+        }
 
-    /* REVEAL THE TEXT WHEN THE FIGURE IS HOVERED OVER */
-    .pict figure:hover, .hover-text{
-        display: block; /* CHANE THE TEXT FROM HIDDEN TO VISIBLE */
-    }
+        /* MAKE IMAGES FILL AVAILABLE WIDTH */
+        .pict img{
+            width: 100%;
+            transition: transform 0.3s ease, opacity 0.3s ease; /* ANIMATE ZOOM AND TRANSPARENCY CHANGES OVER 0.3S */
 
-    /* ENLARGES AND SLIGHTLY FADE IMAGES ON HOVER */
-    .pict figure:hover img{
-        transform: scale(1.05); /* INCREASE THE IMAGE SIZE BY 5% */
-        opacity: 0.9;
-    }
+        }
 
-    /* APPLY A BLUR AND ZOOM EFFECT TO IMAGES WITH CLASS "im" */
-    .im:hover{
-        filter: blur(2px);
-        opacity: 0.9;
-        transform: scale(1.05);
-        transition: scale(1.05);
-        transition: all 0.3s ease-in-out;
-    }
+        /* HIDE THE TEXT UNTIL THE IMAGE IS HOVERED OVER */
+        .hover-text{
+            /* HIDES THE TEXT BY DEFAULT */
+            display: none;
+            position: absolute; /* ALLOWS THE TEXT TO SIT ON TOP OF THE IMAGE */
+            bottom: 30px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7); /* USES A BLACK BG WITH 70% OPACITY */
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            white-space: nowrap;/* KEEP THE TEXT ON ONE LINE */
+        }
 
-    /* DESKTOP MENU */
-    .menu1{
-        display: flex;
-        background: white;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .menu1 a{
+        /* REVEAL THE TEXT WHEN THE FIGURE IS HOVERED OVER */
+        .pict figure:hover .hover-text{
         display: block;
-    }
+        }
 
-    /* MAIN CONTENT AND HEADINGS */
+        /* ENLARGES AND SLIGHTLY FADE IMAGES ON HOVER */
+        .pict figure:hover img{
+            transform: scale(1.05); /* INCREASE THE IMAGE SIZE BY 5% */
+            opacity: 0.9;
+        }
 
-    #wrapper{
-        width: 90%;
-        margin: 0 auto; /* CENTER THE CONTAINER HORIZONTALLY */
-    }
+        /* APPLY A BLUR AND ZOOM EFFECT TO IMAGES WITH CLASS "im" */
+        .im:hover{
+            filter: blur(2px);
+            opacity: 0.9;
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
 
-    h1{
-        text-align: left;
-        font-size: 4em;
-        margin-bottom: 1em;
-    }
+        /* DESKTOP MENU */
+        .menu1{
+            display: flex;
+            background: white;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-    header h2{
-        margin-top: 0px;
-        margin-bottom: 30px;
-        text-align: right;
-        font-size: 20px;
-        color: darkgray;
-    }
+        .menu1 a{
+            display: block;
+        }
 
-    .stories-title{
-        text-align: right;
-        font-size: 3em;
-    }
+        /* MAIN CONTENT AND HEADINGS */
 
-    .intro{
-        font-size: 2em;
-        margin-bottom: 1em;
-        text-align: justify;
-    }
+        #wrapper{
+            width: 90%;
+            margin: 0 auto; /* CENTER THE CONTAINER HORIZONTALLY */
+        }
 
-    header h3{
-        margin-top: 0px;
-        margin-bottom: 10px;
-        text-align: left;
-        font-size: 20px;
-        color: darkgray;
-    }
+        h1{
+            text-align: left;
+            font-size: 4em;
+            margin-bottom: 1em;
+        }
 
-    /* NAVIGATION BAR */
+        header h2{
+            margin-top: 0px;
+            margin-bottom: 30px;
+            text-align: right;
+            font-size: 20px;
+            color: darkgray;
+        }
 
-    nav{
-        /* FIRST COLUMN: 60% OF THE GRID WIDTH
-        2ND COLUMN: THE REMAINING SPACE AVAILABLE */
-        display: grid;
-        grid-template-columns: 60% 1fr;
-        align-items: center;
-        font-size: 2em;
-        margin-top: 50px;
-    }
+        .stories-title{
+            text-align: right;
+            font-size: 3em;
+        }
 
-    .logo{
-        text-align: left;
-    }
+        .intro{
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: justify;
+        }
 
-    nav a{
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-    }
+        header h3{
+            margin-top: 0px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-size: 20px;
+            color: darkgray;
+        }
 
-    nav a:hover{
-        color: darkgray;
-    }
+        /* NAVIGATION BAR */
 
-    .menu1{
-        text-align: right;
-    }
+        nav{
+            /* FIRST COLUMN: 60% OF THE GRID WIDTH
+            2ND COLUMN: THE REMAINING SPACE AVAILABLE */
+            display: grid;
+            grid-template-columns: 60% 1fr;
+            align-items: center;
+            font-size: 2em;
+            margin-top: 50px;
+        }
 
-    .menu1_active{
-        text-align: right;
-        color: gray;
-    }
+        .logo{
+            text-align: left;
+        }
 
-    /* SECTIONS AND ARTICLES */
+        nav a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
 
-    section{
-        margin-bottom: 30px;
-        text-align: justify;
-    }
+        nav a:hover{
+            color: darkgray;
+        }
 
-    /* SELECT THE LAST PARAGRAPH INSIDE AN ARTICLE */
-    article p:last-child{
-        margin-bottom: 80px;
-    }
+        .menu1{
+            text-align: right;
+        }
 
-    article h3{
-        margin-bottom: 10px;
-        color: darkgray;
-    }
+        .menu1_active{
+            text-align: right;
+            color: gray;
+        }
 
-    /* FOOTER */
-    footer{
-        margin-top: 20px;
-        min-height: 30px;
-        font-size: 10px;
-        font-weight: lighter;
-        text-align: right;
-        font-style: italic;
-    }
+        /* SECTIONS AND ARTICLES */
 
-    footer a{
-        text-decoration: none;
-        color: black;
-    }
+        section{
+            margin-bottom: 30px;
+            text-align: justify;
+        }
 
-    /* DESKTOP IMAGE GRID */
+        /* SELECT THE LAST PARAGRAPH INSIDE AN ARTICLE */
+        article p:last-child{
+            margin-bottom: 80px;
+        }
 
-    .pict{
-        display: grid;
-        /* CREATE 12 EQUALLY SIZED COLUMNS */
-        grid-template-columns: repeat(12, 1fr);
-        gap: 0;
-        margin: 0;
-        padding: 0;
-    }
+        article h3{
+            margin-bottom: 10px;
+            color: darkgray;
+        }
 
-    .im{
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1; /* REQUEST A SQUARE IMAGE AREA */
-        object-fit: cover; /* FILL THE IMAGE AREA WITHOUT STRETCHING THE IMAGE. THE IMAGE MAY BE CROPPED TO FIT */
-        box-sizing: border-box; /* INCLUDE THE PADDING AND BORDERS IN THE ELEMENT DIMENSIONS */
-        display: block; /* REMOVE THE EXTRA BASELINE SPACE BETWEEN THE INLINE IMAGES */
-    }
+        /* FOOTER */
+        footer{
+            margin-top: 20px;
+            min-height: 30px;
+            font-size: 10px;
+            font-weight: lighter;
+            text-align: right;
+            font-style: italic;
+        }
 
-    /* FIRST AND SECOND ROWS */
+        footer a{
+            text-decoration: none;
+            color: black;
+        }
 
-    /* IMAGE 1: UPPER-LEFT POSITION */
-    .im1{
-        /* SPAN 3 COLUMNS */
-        grid-column: 1 / 4;
+        /* DESKTOP IMAGE GRID */
 
-        /* SPAN 2 ROWS */
-        grid-row: 1 / 3;
-    }
+        .pict{
+            display: grid;
+            /* CREATE 12 EQUALLY SIZED COLUMNS */
+            grid-template-columns: repeat(12, 1fr);
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* IMAGE 2: BESIDE IMAGE 1 */
-    .im2{
-        /* SPAN THE NEXT 2 COLUMNS */
-        grid-column: 4 / 7;
+        .im{
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1; /* REQUEST A SQUARE IMAGE AREA */
+            object-fit: cover; /* FILL THE IMAGE AREA WITHOUT STRETCHING THE IMAGE. THE IMAGE MAY BE CROPPED TO FIT */
+            box-sizing: border-box; /* INCLUDE THE PADDING AND BORDERS IN THE ELEMENT DIMENSIONS */
+            display: block; /* REMOVE THE EXTRA BASELINE SPACE BETWEEN THE INLINE IMAGES */
+        }
 
-        /* SPAN THE SAME 2 ROWS */
-        grid-row: 1 / 3;
-    }
+        /* FIRST AND SECOND ROWS */
 
-    /* IMAGE 3: LARGE RECTANGLE ON THE RIGHT */
-    .im3{
-        /* SPAN 6 COLUMNS */
-        grid-column: 7 / 13;
+        /* IMAGE 1: UPPER-LEFT POSITION */
+        .im1{
+            /* SPAN 3 COLUMNS */
+            grid-column: 1 / 4;
 
-        /* SPAN 4 ROWS */
-        grid-row: 1 / 5;
-    }
+            /* SPAN 2 ROWS */
+            grid-row: 1 / 3;
+        }
 
-    /* IMAGE 4: BELOW IMAGE 1 */
-    .im4{
-        /* USE THE SAME 3 COLUMNS AS IMAGE 1 */
-        grid-column: 1 / 4;
+        /* IMAGE 2: BESIDE IMAGE 1 */
+        .im2{
+            /* SPAN THE NEXT 2 COLUMNS */
+            grid-column: 4 / 7;
 
-        /* SPANS ROWS 3 AND 4 */
-        grid-row: 3 / 5;
-    }
+            /* SPAN THE SAME 2 ROWS */
+            grid-row: 1 / 3;
+        }
 
-    /* IMAGE 5: BELOW IMAGE 2 */
-    .im5{
-        /* USE THE SAME 3 COLUMNS AS IMAGE 2 */
-        grid-column: 4 / 7;
+        /* IMAGE 3: LARGE RECTANGLE ON THE RIGHT */
+        .im3{
+            /* SPAN 6 COLUMNS */
+            grid-column: 7 / 13;
 
-        /* SPANS ROWS 3 AND 4 */
-        grid-row: 3 / 5;
-    }
+            /* SPAN 4 ROWS */
+            grid-row: 1 / 5;
+        }
 
-    /* IMAGE 6: LARGE RECTANGLE ON THE LEFT */
-    .im6{
-        /* SPAN 6 COLUMNS */
-        grid-column: 1 / 7;
+        /* IMAGE 4: BELOW IMAGE 1 */
+        .im4{
+            /* USE THE SAME 3 COLUMNS AS IMAGE 1 */
+            grid-column: 1 / 4;
 
-        /* SPANS 4 ROWS */
-        grid-row: 5 / 9;
-    }
+            /* SPANS ROWS 3 AND 4 */
+            grid-row: 3 / 5;
+        }
 
-    /* IMAGE 7: BELOW IMAGE 2 */
-    .im7{
-        /* USE THE SAME 3 COLUMNS */
-        grid-column: 7 / 10;
+        /* IMAGE 5: BELOW IMAGE 2 */
+        .im5{
+            /* USE THE SAME 3 COLUMNS AS IMAGE 2 */
+            grid-column: 4 / 7;
 
-        /* SPANS 2 ROWS */
-        grid-row: 5 / 7;
-    }
+            /* SPANS ROWS 3 AND 4 */
+            grid-row: 3 / 5;
+        }
 
-    /* IMAGE 8: BESIDE IMAGE 7 */
-    .im8{
-        /* SPAN THE LAST 3 COLUMNS */
-        grid-column: 10 / 13;
+        /* IMAGE 6: LARGE RECTANGLE ON THE LEFT */
+        .im6{
+            /* SPAN 6 COLUMNS */
+            grid-column: 1 / 7;
 
-        /* ALIGN WITH IMAGE 7 */
-        grid-row: 5 / 7;
-    }
+            /* SPANS 4 ROWS */
+            grid-row: 5 / 9;
+        }
 
-    /* IMAGE 9: BELOW IMAGE 7 */
-    .im9{
-        /* USE THE SAME 3 COLUMNS AS IMAGE 7 */
-        grid-column: 7 / 10;
+        /* IMAGE 7: BELOW IMAGE 2 */
+        .im7{
+            /* USE THE SAME 3 COLUMNS */
+            grid-column: 7 / 10;
 
-        /* SPANS ROWS 7 AND 8 */
-        grid-row: 7 / 9;
-    }
+            /* SPANS 2 ROWS */
+            grid-row: 5 / 7;
+        }
 
-    /* IMAGE 10: BELOW IMAGE 8 */
-    .im10{
-        /* USE THE SAME 3 COLUMNS AS IMAGE 8 */
-        grid-column: 10 / 13;
+        /* IMAGE 8: BESIDE IMAGE 7 */
+        .im8{
+            /* SPAN THE LAST 3 COLUMNS */
+            grid-column: 10 / 13;
 
-        /* SPANS ROWS 7 AND 8 */
-        grid-row: 7 / 9;
-    }
+            /* ALIGN WITH IMAGE 7 */
+            grid-row: 5 / 7;
+        }
 
-    /* FINAL ROWL IMAGES 11 TO 14 */
+        /* IMAGE 9: BELOW IMAGE 7 */
+        .im9{
+            /* USE THE SAME 3 COLUMNS AS IMAGE 7 */
+            grid-column: 7 / 10;
 
-    /* APPLY SHARED POSITIONING TO IMAGES 11 AND 13 */
-    
-    .im11, 
-    .im13{
-        /* INITIALLY ASSIGN THE FIRST 3 COLUMNS */
-        grid-column: 1 / 4;
+            /* SPANS ROWS 7 AND 8 */
+            grid-row: 7 / 9;
+        }
 
-        /* SPAN THE FINAL 2 ROWS */
-        grid-row: 9 / 11;
-    }
+        /* IMAGE 10: BELOW IMAGE 8 */
+        .im10{
+            /* USE THE SAME 3 COLUMNS AS IMAGE 8 */
+            grid-column: 10 / 13;
 
-    /* APPLY SHARED POSITIONING TO IMAGES 12 AND 14 */
+            /* SPANS ROWS 7 AND 8 */
+            grid-row: 7 / 9;
+        }
 
-    .im12, 
-    .im14{
-        /* INITIALLY ASSIGN THE COLUMNS 4 THROUGH 6 */
-        grid-column: 4 / 7;
+        /* FINAL ROWL IMAGES 11 TO 14 */
 
-        /* SPAN THE FINAL 2 ROWS */
-        grid-row: 9 / 11;
-    }
+        /* APPLY SHARED POSITIONING TO IMAGES 11 AND 13 */
+        
+        .im11, 
+        .im13{
+            /* INITIALLY ASSIGN THE FIRST 3 COLUMNS */
+            grid-column: 1 / 4;
 
-    /* OVERRIDE THE STARTING POSITION FOR IMAGE 13 */
-    .im13{
-        /* PLACE IMAGE 13 TO COLUMN 7 THROUGH 9 */
-        grid-column: 7 / 10;
-    }
+            /* SPAN THE FINAL 2 ROWS */
+            grid-row: 9 / 11;
+        }
 
-    /* OVERRIDE THE STARTING POSITION FOR IMAGE 14 */
-    .im14{
-        /* PLACE IMAGE 14 TO COLUMN 10 THROUGH 12 */
-        grid-column: 10 / 13;
-    }
+        /* APPLY SHARED POSITIONING TO IMAGES 12 AND 14 */
+
+        .im12, 
+        .im14{
+            /* INITIALLY ASSIGN THE COLUMNS 4 THROUGH 6 */
+            grid-column: 4 / 7;
+
+            /* SPAN THE FINAL 2 ROWS */
+            grid-row: 9 / 11;
+        }
+
+        /* OVERRIDE THE STARTING POSITION FOR IMAGE 13 */
+        .im13{
+            /* PLACE IMAGE 13 TO COLUMN 7 THROUGH 9 */
+            grid-column: 7 / 10;
+        }
+
+        /* OVERRIDE THE STARTING POSITION FOR IMAGE 14 */
+        .im14{
+            /* PLACE IMAGE 14 TO COLUMN 10 THROUGH 12 */
+            grid-column: 10 / 13;
+        }
