@@ -3,7 +3,44 @@ body {
     font-weight: 900;
     /* Use the dault size as the reference size */
     font-size: 1em;
+    /* Remove the inner spacing around the page */
     padding: 0;
+    /* Remove the browser's default outer page margins */
     margin: 0;
+}
 
+/* IMAGE HOVER EFFECTS */
+
+/* Position each figure so that the text can appear over its image */
+.pict figure {
+    /* Create a positioning reference for child elements */
+    position: relative;
+    /* Allows figures to sit alongside each other */
+    display: inline-block;
+    /* Show a hand cursor when hovering over the figure */
+    cursor: pointer;
+}
+
+/* Make images fill available width */
+.pict img {
+    width: 100%;
+    /* Animate zoom and transparency changes over 0.3 seconds */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hide the text until the image is hovered over */
+.hover-text {
+    /* Hides the text by default */
+    display: none;
+    /* Allows the text to sit on top of the image */
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    /* Use a black BG with 70% opacity */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    /* Keep the text on one line (does not wrap) */
+    white-space: nowrap;
 }
