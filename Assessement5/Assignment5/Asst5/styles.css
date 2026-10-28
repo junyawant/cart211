@@ -1,0 +1,9 @@
+body {
+    font-family: 'Roboto', 'Inter', sans-serif;
+    font-weight: 900;
+    /* Use the dault size as the reference size */
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+
+}
