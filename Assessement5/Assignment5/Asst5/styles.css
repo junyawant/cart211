@@ -68,6 +68,13 @@
             display: block;
         }
 
+        /* Hide the Hamburger menu by default on desktop */
+        .hamburger-menu {
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
         /* MAIN CONTENT AND HEADINGS */
 
         #wrapper{
