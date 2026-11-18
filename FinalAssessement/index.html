@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <!--Meta description for SEO-->
+    <meta name="description" content="A simulated search engine that shows what happens to the data behind a late-night search. A student project about behavioural surplus.">
+
+    <!--Open Graph for Social Sharing-->
+    <meta property="og:title" content="[logo] - Search">
+    <meta property="og:description" content="A simulated search engine that exposes the data collected beyond what a search actually needs.">
+
+    <!--Author and Copyright-->
+    <meta name="author" content="Erica Galvez">
+    <meta name="copyright" content="Copyright Erica Galvez, student project 2026">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--Main Wrapper-->
+    <div id="wrapper">
+
+        <header class="topbar">
+            <a class="logo" href="index.html">[logo]</a>
+            <div class="topright">
+                <nav class="toggle" aria-label="View">
+                    <a class="on" href="index.html">clean</a> |
+                    <a href="results2.html">shadow</a>
+                </nav>
+            </div>
+        </header>
+
+        <!--Main Content-->
+        <main class="home-main">
+            <h1>[logo]</h1>
+
+            <form class="search" action="results.html" method="get">
+                <input type="search" name="q" placeholder="search" aria-label="Search">
+                <ul class="suggestions">
+                    <li><a href="results.html">why can’t I sleep</a></li>
+                    <li><a href="results.html">how to stop overthinking</a></li>
+                    <li><a href="results.html">melatonin dosage</a></li>
+                    <li><a href="results.html">am I burned out</a></li>
+                </ul>
+            </form>
+
+            <p class="what-is"><a href="reflection.html">what is this?</a></p>
+        </main>
+
+        <!--Footer-->
+        <footer>
+            <small>This is a simulation. Nothing you type is stored or sent.<br>
+            This website was created as part of a school project. All content and design are copyright Erica Galvez, student, 2026.</small>
+        </footer>
+    </div>
+</body>
+</html>

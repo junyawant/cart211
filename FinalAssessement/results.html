@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results - [logo]</title>
+    <!--Meta description for SEO-->
+    <meta name="description" content="A simulated search engine that shows what happens to the data behind a late-night search. A student project about behavioural surplus.">
+
+    <!--Open Graph for Social Sharing-->
+    <meta property="og:title" content="Search results - [logo]">
+    <meta property="og:description" content="A simulated search engine that exposes the data collected beyond what a search actually needs.">
+
+    <!--Author and Copyright-->
+    <meta name="author" content="Erica Galvez">
+    <meta name="copyright" content="Copyright Erica Galvez, student project 2026">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- STAGE 1: clean. Looks like any search engine. -->
+<body class="results stage-1">
+    <!--Main Wrapper-->
+    <div id="wrapper">
+
+        <header class="topbar">
+            <a class="logo" href="index.html">[logo]</a>
+            <div class="topright">
+                <nav class="toggle" aria-label="View">
+                    <a class="on" href="results.html">clean</a> |
+                    <a href="results2.html">shadow</a>
+                </nav>
+            </div>
+        </header>
+
+        <form class="search results-bar" action="results2.html" method="get">
+            <input type="search" name="q" value="why can’t I sleep" aria-label="Search">
+        </form>
+
+        <!--Main Content-->
+        <main class="layout">
+            <article class="col-results">
+                <p class="headline">Great search! Here’s what we found.</p>
+
+                <section class="result">
+                    <p class="url">sleepfoundation.example › why-cant-i-sleep</p>
+                    <h2><a href="#">10 common reasons you can’t fall asleep</a></h2>
+                    <p>From too much caffeine to an uneven schedule, here are the most common causes and what to try tonight.</p>
+                </section>
+
+                <section class="result">
+                    <p class="url">healthline.example › insomnia › tips</p>
+                    <h2><a href="#">How to fall asleep faster: 12 simple tips</a></h2>
+                    <p>Keep the room cool, dim the lights an hour before bed and put your phone in another room.</p>
+                </section>
+
+                <section class="result">
+                    <p class="url">nhs.example › sleep › insomnia</p>
+                    <h2><a href="#">Insomnia: symptoms and when to see a doctor</a></h2>
+                    <p>Trouble sleeping is common. Find out what is normal and when it is worth getting support.</p>
+                </section>
+
+                <section class="result">
+                    <p class="url">calm.example › blog › sleep-routine</p>
+                    <h2><a href="#">Build a bedtime routine that actually works</a></h2>
+                    <p>Small, repeatable habits help your body learn when it is time to wind down.</p>
+                </section>
+            </article>
+
+            <aside class="col-side">
+                <p class="side-title">&nbsp;</p>
+                <!-- empty at stage 1 -->
+            </aside>
+        </main>
+
+        <!--Footer-->
+        <footer>
+            <small>This is a simulation. Nothing you type is stored or sent.<br>
+            This website was created as part of a school project. All content and design are copyright Erica Galvez, student, 2026.</small>
+        </footer>
+    </div>
+</body>
+</html>

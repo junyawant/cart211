@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("fonts/GlacialIndifference-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("fonts/GlacialIndifference-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+:root {
+  --home-bg: #dedede;
+  --results-bg: #dedede;
+  --dark-bg: #000;
+  --ink: #000;
+  --ink-soft: #3a3a3a;
+  --paper: #fff;
+
+  /* color coding for the shadow profile (from wireframe) */
+  --c-location: #00b050;
+  --c-time: #ff3030;
+  --c-mood: #0096c7;
+  --c-routine: #ffd23f;
+  --c-interest: #8b5cf6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Glacial Indifference", "Century Gothic", "Avenir Next", Futura, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--home-bg);
+}
+
+/* Main wrapper (same idea as class sites) */
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body.results { background: var(--results-bg); }
+body.dark    { background: var(--dark-bg); color: #fff; }
+
+a { color: inherit; }
+
+/* ----- top bar: logo left, toggle right ----- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 28px 36px;
+}
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.toggle { font-size: 18px; }
+.toggle a { text-decoration: none; padding: 0 4px; }
+.toggle .on { font-weight: 700; border-bottom: 2px solid currentColor; }
+
+/* stage 4: toggle is locked */
+.toggle.locked { color: #555; }
+.toggle.locked a { pointer-events: none; cursor: not-allowed; }
+.lock-note {
+  display: block;
+  max-width: 260px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #777;
+  text-align: right;
+}
+
+.topright { text-align: right; }
+
+/* ----- search bar (underline style from wireframe) ----- */
+.search { width: 100%; max-width: 520px; margin: 0 auto; }
+.search input {
+  width: 100%;
+  font: inherit;
+  font-size: 22px;
+  padding: 8px 2px;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid currentColor;
+  outline: none;
+}
+.search input::placeholder { color: #666; }
+.dark .search input::placeholder { color: #888; }
+.search input:focus-visible { border-bottom-style: dashed; }
+
+.suggestions {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  font-size: 17px;
+}
+.suggestions li { padding: 3px 0; }
+.suggestions a { text-decoration: none; color: var(--ink-soft); }
+.suggestions a:hover { text-decoration: underline; color: var(--ink); }
+
+/* ----- home ----- */
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 24px 0;
+}
+.home-main h1 {
+  font-size: 56px;
+  margin: 0 0 36px;
+  letter-spacing: -1.5px;
+}
+.what-is { margin-top: 40px; font-size: 15px; }
+
+/* ----- results layout ----- */
+.results-bar { padding: 0 24px 28px; }
+.layout {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+}
+.col-results { padding-right: 40px; margin: 0; }
+.col-side { padding-left: 28px; border-left: 3px solid currentColor; }
+
+.headline { font-size: 22px; margin: 0 0 22px; }
+.result { margin-bottom: 26px; }
+.result .url { font-size: 14px; color: var(--ink-soft); margin: 0; }
+.result h2 { font-size: 22px; margin: 0; font-weight: 700; }
+.result h2 a { text-decoration: none; }
+.result h2 a:hover { text-decoration: underline; }
+.result p { margin: 2px 0 0; }
+
+.dark .result .url { color: #aaa; }
+
+.side-title { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
+.side-empty { color: #666; font-size: 15px; }
+
+/* ----- stage 4 dashboard bits ----- */
+.profile { list-style: none; margin: 14px 0 0; padding: 0; }
+.profile li { margin-bottom: 14px; font-size: 16px; line-height: 1.35; }
+.profile li::before { content: "\25CF"; margin-right: 8px; }
+.profile .location { color: var(--c-location); }
+.profile .time     { color: var(--c-time); }
+.profile .mood     { color: var(--c-mood); }
+.profile .routine  { color: var(--c-routine); }
+.profile .interest { color: var(--c-interest); }
+.profile small { display: block; margin-left: 22px; color: #999; font-size: 13px; }
+
+.sys-voice { color: #ddd; }
+
+/* colored underlines on tagged words in stage 4 */
+.u-time     { border-bottom: 3px solid var(--c-time); }
+.u-mood     { border-bottom: 3px solid var(--c-mood); }
+.u-interest { border-bottom: 3px solid var(--c-interest); }
+
+/* reveal card: Detail / Inference / Use */
+.card {
+  margin-top: 28px;
+  padding: 14px 16px;
+  border: 1px solid #555;
+  font-size: 15px;
+}
+.card dt { font-weight: 700; margin-top: 8px; color: #fff; }
+.card dt:first-child { margin-top: 0; }
+.card dd { margin: 0; color: #ccc; }
+.tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 1px 10px;
+  font-size: 13px;
+  border: 1px solid var(--c-time);
+  color: var(--c-time);
+}
+
+.next {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border: 2px solid currentColor;
+  text-decoration: none;
+  font-weight: 700;
+}
+.next:hover { background: #fff; color: #000; }
+
+/* ----- reflection ----- */
+.reflection {
+  flex: 1;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 24px 60px;
+}
+.reflection h1 { font-size: 20px; font-weight: 400; color: #aaa; margin: 0 0 18px; }
+.receipt {
+  list-style: none;
+  margin: 0 0 44px;
+  padding: 18px 0;
+  border-top: 2px dashed #666;
+  border-bottom: 2px dashed #666;
+}
+.receipt li { display: flex; justify-content: space-between; gap: 20px; padding: 3px 0; }
+.receipt .val { color: #aaa; text-align: right; }
+.receipt .total { margin-top: 10px; font-weight: 700; }
+.idea { margin-bottom: 56px; color: #ddd; }
+.question { font-size: 52px; line-height: 1.1; margin: 0 0 28px; letter-spacing: -1px; }
+.answers { display: flex; gap: 14px; flex-wrap: wrap; }
+.answers a {
+  padding: 10px 22px;
+  border: 2px solid #fff;
+  text-decoration: none;
+}
+.answers a:hover { background: #fff; color: #000; }
+
+/* ----- footer ----- */
+footer {
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  padding: 28px 12px;
+  color: var(--ink-soft);
+}
+.dark footer { color: #999; }

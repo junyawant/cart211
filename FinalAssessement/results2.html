@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results - [logo]</title>
+    <!--Meta description for SEO-->
+    <meta name="description" content="A simulated search engine that shows what happens to the data behind a late-night search. A student project about behavioural surplus.">
+
+    <!--Open Graph for Social Sharing-->
+    <meta property="og:title" content="Search results - [logo]">
+    <meta property="og:description" content="A simulated search engine that exposes the data collected beyond what a search actually needs.">
+
+    <!--Author and Copyright-->
+    <meta name="author" content="Erica Galvez">
+    <meta name="copyright" content="Copyright Erica Galvez, student project 2026">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- STAGE 4: full behind-the-scenes. Dark, toggle locked, shadow profile filled in. -->
+<body class="results dark stage-4">
+    <!--Main Wrapper-->
+    <div id="wrapper">
+
+        <header class="topbar">
+            <a class="logo" href="index.html">[logo]</a>
+            <div class="topright">
+                <nav class="toggle locked" aria-label="View (locked)">
+                    <a href="#">clean</a> |
+                    <a class="on" href="#">shadow</a>
+                </nav>
+                <span class="lock-note">view locked</span>
+            </div>
+        </header>
+
+        <form class="search results-bar" action="results2.html" method="get">
+            <input type="search" name="q" value="am I burned out" aria-label="Search">
+        </form>
+
+        <!--Main Content-->
+        <main class="layout">
+            <article class="col-results">
+                <p class="headline sys-voice">
+                    User likely <span class="u-mood">tired</span>.
+                    <span class="u-time">Late-night session.</span>
+                    Elevated stress markers. High susceptibility: supplements, mattresses, wellness apps.
+                </p>
+
+                <section class="result">
+                    <p class="url">mind.example › burnout › signs</p>
+                    <h2><a href="#">Burnout: 9 signs you’re running on empty</a></h2>
+                    <p>Exhaustion, cynicism and a drop in performance are common signals.</p>
+                </section>
+
+                <section class="result">
+                    <p class="url">hbr.example › burnout-quiz</p>
+                    <h2><a href="#">Take the burnout self-assessment</a></h2>
+                    <p>Answer 15 short questions to see where you land.</p>
+                </section>
+
+                <section class="result">
+                    <p class="url">sleepwell.example › supplements</p>
+                    <h2><a href="#">Best sleep supplements of the year</a></h2>
+                    <p>Compare melatonin, magnesium and herbal blends.</p>
+                </section>
+
+                <section class="result">
+                    <p class="url">comfortco.example › mattresses</p>
+                    <h2><a href="#">Sleeping badly? Try a mattress made for restless nights</a></h2>
+                    <p>100-night trial. Free shipping.</p>
+                </section>
+
+                <a class="next" href="reflection.html">See what it adds up to</a>
+            </article>
+
+            <aside class="col-side">
+                <p class="side-title">Shadow profile</p>
+                <p class="sys-voice">Inferred from 4 searches</p>
+
+                <ul class="profile">
+                    <li class="location">Location: Montréal, QC<small>from IP address</small></li>
+                    <li class="time">Time on page: 48 s<small>reading speed, hesitation</small></li>
+                    <li class="mood">Mood: low, anxious<small>from query wording</small></li>
+                    <li class="routine">Routine: irregular, up past 1 AM<small>from time of day</small></li>
+                    <li class="interest">Interests: sleep aids, self-help<small>from topic sequence</small></li>
+                </ul>
+
+                <!-- example reveal card (static for now) -->
+                <dl class="card">
+                    <dt>Detail</dt>
+                    <dd>Session started at 1:12 AM.</dd>
+                    <dt>Inference</dt>
+                    <dd>Irregular sleep, possible stress.</dd>
+                    <dt>Use</dt>
+                    <dd>Time ads for sleep aids and wellness apps to the lowest-energy hours.</dd>
+                    <span class="tag">Surplus</span>
+                </dl>
+            </aside>
+        </main>
+
+        <!--Footer-->
+        <footer>
+            <small>This is a simulation. Nothing you type is stored or sent.<br>
+            This website was created as part of a school project. All content and design are copyright Erica Galvez, student, 2026.</small>
+        </footer>
+    </div>
+</body>
+</html>
